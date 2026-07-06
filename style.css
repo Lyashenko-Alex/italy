@@ -1,0 +1,385 @@
+/* ===========================
+RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#ffffff;
+
+    color:#111111;
+
+    font-family:'Inter',sans-serif;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+/* ===========================
+LAYOUT
+=========================== */
+
+.container{
+
+    max-width:420px;
+
+    margin:0 auto;
+
+    padding:28px 20px 60px;
+
+}
+
+section{
+
+    margin-bottom:72px;
+
+}
+
+/* ===========================
+TYPOGRAPHY
+=========================== */
+
+.eyebrow{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#777;
+
+    margin-bottom:18px;
+
+}
+
+h1{
+
+    font-size:40px;
+
+    line-height:1.08;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+.subtitle{
+
+    font-size:19px;
+
+    line-height:1.55;
+
+    color:#555;
+
+    margin-bottom:28px;
+
+}
+
+h2{
+
+    font-size:30px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    margin-bottom:26px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+CARD
+=========================== */
+
+.portrait-card{
+
+    background:#fafafa;
+
+    border:1px solid #ececec;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    margin-bottom:22px;
+
+}
+
+.portrait-card h2{
+
+    font-size:24px;
+
+    margin-bottom:24px;
+
+}
+
+.benefit{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    margin-bottom:22px;
+
+}
+
+.benefit:last-child{
+
+    margin-bottom:0;
+
+}
+
+.emoji{
+
+    font-size:28px;
+
+    line-height:1;
+
+    flex-shrink:0;
+
+}
+
+.benefit strong{
+
+    display:block;
+
+    font-size:20px;
+
+    margin-bottom:6px;
+
+}
+
+.benefit p{
+
+    font-size:16px;
+
+    color:#666;
+
+    line-height:1.5;
+
+}
+
+/* ===========================
+FREE TEXT
+=========================== */
+
+.free-text{
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#444;
+
+    margin-bottom:28px;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+.cta{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:64px;
+
+    background:#111111;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    border-radius:16px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.2s;
+
+}
+
+.cta:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================
+REVIEWS
+=========================== */
+
+.reviews-slider{
+
+    display:flex;
+
+    gap:16px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding-bottom:12px;
+
+    margin-bottom:28px;
+
+}
+
+.reviews-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.reviews-slider img{
+
+    width:280px;
+
+    border-radius:16px;
+
+    flex-shrink:0;
+
+    scroll-snap-align:start;
+
+    border:1px solid #ececec;
+
+}
+
+/* ===========================
+FEATURES
+=========================== */
+
+.features-list{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+.features-list li{
+
+    font-size:20px;
+
+    line-height:1.45;
+
+}
+
+.bottom-copy{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+    border-top:1px solid #efefef;
+
+    padding-top:34px;
+
+}
+
+footer p{
+
+    color:#666;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media (max-width:390px){
+
+    h1{
+
+        font-size:36px;
+
+    }
+
+    h2{
+
+        font-size:27px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+    .benefit strong{
+
+        font-size:19px;
+
+    }
+
+    .cta{
+
+        font-size:19px;
+
+    }
+
+}
