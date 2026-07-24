@@ -99,17 +99,17 @@ ORDER FORM
         Astrological Portrait
     </h2>
 
-    <form>
+    <form id="orderForm">
 
         <label>
             Date of birth
         </label>
 
         <input
-            type="date"
-            name="birthdate"
-            required
-        >
+    id="birthDate"
+    type="date"
+    name="birthdate"
+    required>
 
         <label>
             Time of birth
@@ -117,31 +117,31 @@ ORDER FORM
         </label>
 
         <input
-            type="time"
-            name="birthtime"
-        >
+    id="birthTime"
+    type="time"
+    name="birthtime">
 
         <label>
             Place of birth
         </label>
 
-        <input
-            type="text"
-            name="birthplace"
-            placeholder="City, Country"
-            required
-        >
+       <input
+    id="birthPlace"
+    type="text"
+    name="birthplace"
+    placeholder="City, Country"
+    required>
 
         <label>
             Email address
         </label>
 
-        <input
-            type="email"
-            name="email"
-            placeholder="you@example.com"
-            required
-        >
+       <input
+    id="email"
+    type="email"
+    name="email"
+    placeholder="you@example.com"
+    required>
 
         <div class="price-box">
 
@@ -283,9 +283,6 @@ WHY CHOOSE SARAH
 
 </section>
 
-<button onclick="testAPI()">
-    TEST API
-</button>
 
 <!-- ===========================
 FOOTER
@@ -323,30 +320,68 @@ FOOTER
 
 </main>
 
+
 <script>
-async function testAPI() {
+
+const form = document.getElementById("orderForm");
+
+form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
 
     const body = new URLSearchParams({
-        birthDate: "01.08.1989",
-        birthTime: "13:44",
-        birthPlace: "Kharkiv",
-        email: "test@test.com",
-        payment: "15 EUR",
-        stripeId: "TEST123456"
-    });
+
+    birthDate: document.getElementById("birthDate").value,
+    birthTime: document.getElementById("birthTime").value || "Unknown",
+    birthPlace: document.getElementById("birthPlace").value,
+    email: document.getElementById("email").value,
+
+    payment: "9 USD",
+    stripeId: ""
+
+});
+
+    const submitButton = form.querySelector("button[type='submit']");
+
+try {
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Please wait...";
 
     const response = await fetch(
         "https://script.google.com/macros/s/AKfycbwQQj7COL3CL8oLqePDU4oMkD6CIpRKmIyUd0EsFcg3TtlI0GE3O0HM8pL3sTOHsC__wA/exec",
         {
             method: "POST",
-            body: body
+            body
         }
     );
 
-    const text = await response.text();
+    const result = await response.json();
 
-    alert(text);
+    if (result.success) {
+
+        window.location.href = "https://buy.stripe.com/bJe4gBeAs38A0lbdjd57W0a";
+
+    } else {
+
+        submitButton.disabled = false;
+        submitButton.textContent = "GET ACCESS FOR $9";
+
+        alert("Error. Please try again.");
+
+    }
+
+} catch (err) {
+
+    submitButton.disabled = false;
+    submitButton.textContent = "GET ACCESS FOR $9";
+
+    alert("Connection error. Please try again.");
+
 }
+
+});
+
 </script>
 
 </body>
