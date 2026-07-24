@@ -326,24 +326,26 @@ FOOTER
 <script>
 async function testAPI() {
 
-    const response = await fetch("https://script.google.com/macros/s/AKfycbwQQj7COL3CL8oLqePDU4oMkD6CIpRKmIyUd0EsFcg3TtlI0GE3O0HM8pL3sTOHsC__wA/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            birthDate: "01.08.1989",
-            birthTime: "13:44",
-            birthPlace: "Kharkiv",
-            email: "test@test.com",
-            payment: "15 EUR",
-            stripeId: "TEST123456"
-        })
+    const body = new URLSearchParams({
+        birthDate: "01.08.1989",
+        birthTime: "13:44",
+        birthPlace: "Kharkiv",
+        email: "test@test.com",
+        payment: "15 EUR",
+        stripeId: "TEST123456"
     });
 
-    const result = await response.json();
+    const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwQQj7COL3CL8oLqePDU4oMkD6CIpRKmIyUd0EsFcg3TtlI0GE3O0HM8pL3sTOHsC__wA/exec",
+        {
+            method: "POST",
+            body: body
+        }
+    );
 
-    alert(JSON.stringify(result));
+    const text = await response.text();
+
+    alert(text);
 }
 </script>
 
