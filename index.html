@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free Astrological Portrait | Sanctuary</title>
+    <title>Astrological Portrait | Sarah Your Astrologer</title>
 
-    <meta name="description" content="Discover your FREE Astrological Portrait inside the Sanctuary app.">
+    <meta name="description"
+        content="Receive your personalized Astrological Portrait prepared individually from your birth chart.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" type="image/png" href="favicon.jpg">
 
 </head>
 
@@ -25,112 +26,162 @@
 <main class="container">
 
 <!-- ===========================
+HEADER
+=========================== -->
+
+<header class="header">
+
+    <div class="logo-circle">
+        ✦
+    </div>
+
+    <div class="header-text">
+
+        <span class="header-name">
+            Sarah
+        </span>
+
+        <span class="header-role">
+            Your Astrologer
+        </span>
+
+    </div>
+
+</header>
+
+<!-- ===========================
 HERO
 =========================== -->
 
 <section class="hero">
 
-    <div class="eyebrow">
-        FREE PERSONALIZED READING
-    </div>
-
     <h1>
-        Discover Your Personal<br>
-        Astrological Portrait
+        Astrological<br>
+        Portrait
     </h1>
 
     <p class="subtitle">
-        Discover hidden personality traits, relationship patterns, career strengths and financial tendencies through your unique birth chart.
+
+        Discover your hidden strengths, talents, financial potential,
+        relationship patterns and life purpose based on your unique birth chart.
+
     </p>
 
-    <div class="portrait-card">
+    <div class="what-you-get">
 
         <h2>
-            Inside your FREE reading
+            What does it show?
         </h2>
 
-        <div class="benefit">
+        <ul>
 
-            <span class="emoji">❤️</span>
+            <li>✓ Your strengths</li>
 
-            <div>
+            <li>✓ Hidden talents</li>
 
-                <strong>Love</strong>
+            <li>✓ Financial potential</li>
 
-                <p>Understand your relationship patterns.</p>
+            <li>✓ Your life purpose</li>
 
-            </div>
+            <li>✓ Relationship patterns</li>
 
-        </div>
-
-        <div class="benefit">
-
-            <span class="emoji">💰</span>
-
-            <div>
-
-                <strong>Money</strong>
-
-                <p>Explore your financial tendencies.</p>
-
-            </div>
-
-        </div>
-
-        <div class="benefit">
-
-            <span class="emoji">💼</span>
-
-            <div>
-
-                <strong>Career</strong>
-
-                <p>Discover your natural strengths.</p>
-
-            </div>
-
-        </div>
-
-        <div class="benefit">
-
-            <span class="emoji">✨</span>
-
-            <div>
-
-                <strong>Hidden Talents</strong>
-
-                <p>Reveal abilities you may not notice.</p>
-
-            </div>
-
-        </div>
-
-        <div class="benefit">
-
-            <span class="emoji">🧠</span>
-
-            <div>
-
-                <strong>Personality</strong>
-
-                <p>Learn what makes you unique.</p>
-
-            </div>
-
-        </div>
+        </ul>
 
     </div>
+    <!-- ===========================
+ORDER FORM
+=========================== -->
 
-    <p class="free-text">
-        ✓ 100% FREE inside the Sanctuary app
-    </p>
+<div id="order-form" class="order-card">
 
-    <a href="https://moonly.s.gy/1" class="cta">
-        Get My FREE Astrological Portrait
-    </a>
+    <h2>
+        Get your<br>
+        Astrological Portrait
+    </h2>
+
+    <form>
+
+        <label>
+            Date of birth
+        </label>
+
+        <input
+            type="date"
+            name="birthdate"
+            required
+        >
+
+        <label>
+            Time of birth
+            <span class="optional">(if you know)</span>
+        </label>
+
+        <input
+            type="time"
+            name="birthtime"
+        >
+
+        <label>
+            Place of birth
+        </label>
+
+        <input
+            type="text"
+            name="birthplace"
+            placeholder="City, Country"
+            required
+        >
+
+        <label>
+            Email address
+        </label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+        >
+
+        <div class="price-box">
+
+            <div class="old-price">
+                $29
+            </div>
+
+            <div class="offer">
+
+                Special Limited Offer
+
+            </div>
+
+            <div class="new-price">
+
+                $9
+
+            </div>
+
+        </div>
+
+        <button
+            class="cta-button"
+            type="submit">
+
+            GET ACCESS FOR $9
+
+        </button>
+
+        <p class="secure">
+
+            🔒 Secure payment via Stripe
+
+        </p>
+
+    </form>
+
+</div>
 
 </section>
-
 <!-- ===========================
 REVIEWS
 =========================== -->
@@ -138,72 +189,103 @@ REVIEWS
 <section class="reviews">
 
     <h2>
-        See what people are saying
+        What Women Say
     </h2>
 
-    <div class="reviews-slider">
+    <p class="section-subtitle">
 
-        <img src="assets/reviews/review-1.jpg" alt="Review">
-
-        <img src="assets/reviews/review-2.jpg" alt="Review">
-
-        <img src="assets/reviews/review-3.jpg" alt="Review">
-
-        <img src="assets/reviews/review-4.jpg" alt="Review">
-
-        <img src="assets/reviews/review-5.jpg" alt="Review">
-
-        <img src="assets/reviews/review-6.jpg" alt="Review">
-
-    </div>
-
-    <a href="https://moonly.s.gy/2" class="cta">
-        Get My FREE Astrological Portrait
-    </a>
-
-</section>
-
-<!-- ===========================
-FEATURES
-=========================== -->
-
-<section class="features">
-
-    <h2>
-        What else can you do in Sanctuary?
-    </h2>
-
-    <ul class="features-list">
-
-        <li>✔ Daily Horoscope</li>
-
-        <li>✔ Love Compatibility</li>
-
-        <li>✔ Career Guidance</li>
-
-        <li>✔ Wealth Insights</li>
-
-        <li>✔ Birth Chart</li>
-
-        <li>✔ Moon Calendar</li>
-
-        <li>✔ Personalized Readings</li>
-
-    </ul>
-
-    <p class="bottom-copy">
-
-        Your FREE Astrological Portrait is just the beginning.
-
-        Explore even more personalized insights inside Sanctuary.
+        Thousands of women have already discovered something meaningful about themselves.
 
     </p>
 
-    <a href="https://moonly.s.gy/3" class="cta">
-        Get My FREE Astrological Portrait
+    <div class="reviews-slider">
+
+        <img src="assets/reviews/review-1.jpg" alt="Customer review">
+
+        <img src="assets/reviews/review-2.jpg" alt="Customer review">
+
+        <img src="assets/reviews/review-3.jpg" alt="Customer review">
+
+        <img src="assets/reviews/review-4.jpg" alt="Customer review">
+
+        <img src="assets/reviews/review-5.jpg" alt="Customer review">
+
+        <img src="assets/reviews/review-6.jpg" alt="Customer review">
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+WHY CHOOSE SARAH
+=========================== -->
+
+<section class="benefits">
+
+    <h2>
+        Why Choose Sarah?
+    </h2>
+
+    <div class="benefit-card">
+
+        <h3>
+            🔒 100% Confidentiality
+        </h3>
+
+        <p>
+            Your personal information is securely protected and never shared with third parties. Your birth details are used only to prepare your personal report.
+        </p>
+
+    </div>
+
+    <div class="benefit-card">
+
+        <h3>
+            ⭐ Personally Created
+        </h3>
+
+        <p>
+            Every Astrological Portrait is prepared individually using your birth details. This is not a generic automatically generated report.
+        </p>
+
+    </div>
+
+    <div class="benefit-card">
+
+        <h3>
+            📩 Delivered Within 12 Hours
+        </h3>
+
+        <p>
+            Your completed report will be sent directly to your email within 12 hours after payment.
+        </p>
+
+    </div>
+
+    <div class="benefit-card">
+
+        <h3>
+            💳 7-Day Refund Policy
+        </h3>
+
+        <p>
+            If your purchase qualifies under our Refund Policy, you may request a refund within 7 days.
+        </p>
+
+    </div>
+
+    <a href="#order-form" class="cta-button">
+
+        GET MY PORTRAIT FOR $9
+
     </a>
 
 </section>
+
+<button onclick="testAPI()">
+    TEST API
+</button>
 
 <!-- ===========================
 FOOTER
@@ -211,17 +293,60 @@ FOOTER
 
 <footer>
 
-    <h3>
-        Private & Personalized
-    </h3>
+    <div class="footer-links">
 
-    <p>
-        Your birth information is used only to generate your personalized astrological insights inside the Sanctuary app.
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="refund.html">
+            Refund Policy
+        </a>
+
+        <a href="disclaimer.html">
+            Disclaimer
+        </a>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 Sarah Your Astrologer. All rights reserved.
+
     </p>
 
 </footer>
 
 </main>
 
+<script>
+async function testAPI() {
+
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwQQj7COL3CL8oLqePDU4oMkD6CIpRKmIyUd0EsFcg3TtlI0GE3O0HM8pL3sTOHsC__wA/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            birthDate: "01.08.1989",
+            birthTime: "13:44",
+            birthPlace: "Kharkiv",
+            email: "test@test.com",
+            payment: "15 EUR",
+            stripeId: "TEST123456"
+        })
+    });
+
+    const result = await response.json();
+
+    alert(JSON.stringify(result));
+}
+</script>
+
 </body>
+
 </html>
