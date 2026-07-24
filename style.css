@@ -850,25 +850,24 @@ RESPONSIVE
     }
 
     .loading-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,.96);
 
-    position:fixed;
-    inset:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    background:#ffffff;
+    z-index: 9999;
+}
 
-    display:none;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
 
-    z-index:9999;
 
 }
 
 .loading-overlay.show{
-
     display:flex;
-
 }
 
 .loader{
@@ -909,7 +908,5 @@ RESPONSIVE
 .loading-overlay p{
 
     color:#666;
-
-}
 
 }
