@@ -358,46 +358,51 @@ FOOTER
 
 <script>
 
-const citySelect = new TomSelect("#birthPlace", {
-    valueField: "display_name",
-    labelField: "display_name",
-    searchField: "display_name",
-    maxOptions: 5,
-    create: false
-});
+const birthPlace = document.getElementById("birthPlace");
+const suggestions = document.getElementById("citySuggestions");
 
-citySelect.settings.load = function(query, callback) {
+birthPlace.addEventListener("input", async function () {
+
+    const query = this.value.trim();
 
     if (query.length < 3) {
-        return callback();
+        suggestions.style.display = "none";
+        suggestions.innerHTML = "";
+        return;
     }
 
-    fetch(
-    "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&q=" +
-    encodeURIComponent(query),
-    {
-        headers: {
-            "Accept-Language": "it,it-IT;q=0.9,en;q=0.8"
-        }
-    }
-)
-.then(response => response.json())
-.then(data => callback(data))
-.catch(() => callback());
+    const response = await fetch(
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&accept-language=it&q=" +
+        encodeURIComponent(query)
+    );
 
-};
+    const cities = await response.json();
 
-citySelect.settings.render = {
+    suggestions.innerHTML = "";
 
-    option: function(item, escape) {
-        return `<div>${escape(item.display_name)}</div>`;
-    },
+    cities.forEach(city => {
 
-    item: function(item, escape) {
-        return `<div>${escape(item.display_name)}</div>`;
-    }
+        const item = document.createElement("div");
 
-};
+        item.className = "city-item";
+
+        item.textContent = city.display_name;
+
+        item.onclick = () => {
+
+            birthPlace.value = city.display_name;
+            suggestions.style.display = "none";
+
+        };
+
+        suggestions.appendChild(item);
+
+    });
+
+    suggestions.style.display =
+        cities.length ? "block" : "none";
+
+});
 
 const form = document.getElementById("orderForm");
 
