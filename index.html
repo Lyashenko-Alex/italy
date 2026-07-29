@@ -186,7 +186,7 @@ ORDER FORM
             <div class="price-box">
 
                 <div class="old-price">
-                    $29
+                    29€
                 </div>
 
                 <div class="offer">
@@ -197,7 +197,7 @@ ORDER FORM
 
                 <div class="new-price">
 
-                    $9
+                    7€
 
                 </div>
 
@@ -207,7 +207,7 @@ ORDER FORM
                 class="cta-button"
                 type="submit">
 
-                OTTIENI L'ACCESSO A SOLI $9
+                OTTIENI L'ACCESSO A SOLI €7
 
             </button>
 
@@ -323,7 +323,7 @@ WHY CHOOSE Francesca
 
     <a href="#order-form" class="cta-button">
 
-        OTTIENI IL MIO RITRATTO A SOLI $9
+        OTTIENI IL MIO RITRATTO A SOLI 7 eur
 
     </a>
 
@@ -368,7 +368,7 @@ form.addEventListener("submit", async function(e){
     birthPlace: document.getElementById("birthPlace").value,
     email: document.getElementById("email").value,
 
-    payment: "9 USD",
+    payment: "7 EUR",
     stripeId: ""
 
 });
@@ -395,12 +395,12 @@ try {
 
     if (result.success) {
 
-        window.location.href = "https://buy.stripe.com/bJe4gBeAs38A0lbdjd57W0a";
+        window.location.href = "https://buy.stripe.com/dRm4gB3VO4cEgk94MH57W08";
 
     } else {
 
         submitButton.disabled = false;
-        submitButton.textContent = "OTTIENI L'ACCESSO A SOLI $9";
+        submitButton.textContent = "OTTIENI L'ACCESSO A SOLI 7€";
         loadingOverlay.classList.remove("show");
         loadingOverlay.hidden = true;
         alert("Errore. Riprova.");
@@ -410,7 +410,7 @@ try {
 } catch (err) {
 
     submitButton.disabled = false;
-    submitButton.textContent = "OTTIENI L'ACCESSO A SOLI $9";
+    submitButton.textContent = "OTTIENI L'ACCESSO A SOLI 7€";
     loadingOverlay.classList.remove("show");
     loadingOverlay.hidden = true;
 
