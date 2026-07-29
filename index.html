@@ -18,6 +18,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
 
 </head>
 
@@ -353,7 +354,52 @@ FOOTER
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js">
+    
+</script>
+
+
 <script>
+
+const citySelect = new TomSelect("#birthPlace", {
+    valueField: "display_name",
+    labelField: "display_name",
+    searchField: "display_name",
+    maxOptions: 5,
+    create: false
+});
+
+citySelect.settings.load = function(query, callback) {
+
+    if (query.length < 3) {
+        return callback();
+    }
+
+    fetch(
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&q=" +
+        encodeURIComponent(query)
+    )
+    .then(response => response.json())
+    .then(data => {
+        callback(data);
+    })
+    .catch(() => {
+        callback();
+    });
+
+};
+
+citySelect.settings.render = {
+
+    option: function(item, escape) {
+        return `<div>${escape(item.display_name)}</div>`;
+    },
+
+    item: function(item, escape) {
+        return `<div>${escape(item.display_name)}</div>`;
+    }
+
+};
 
 const form = document.getElementById("orderForm");
 
@@ -418,7 +464,9 @@ try {
 
 }
 
+
 });
+
 
 </script>
 
