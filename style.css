@@ -437,6 +437,31 @@ ORDER FORM
 
 }
 
+.ts-dropdown {
+    border-radius: 14px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.ts-dropdown .option {
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.ts-dropdown .option.active {
+    background: #f7f3ff;
+    color: #6b3df5;
+}
+
+.ts-control {
+    border-radius: 14px !important;
+    min-height: 54px;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+}
+
 .order-card input{
 
     width:100%;
