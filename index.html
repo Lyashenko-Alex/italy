@@ -372,7 +372,7 @@ birthPlace.addEventListener("input", async function () {
     }
 
     const response = await fetch(
-        "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&accept-language=it&q=" +
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&accept-language=it&q=" +
         encodeURIComponent(query)
     );
 
@@ -386,14 +386,17 @@ birthPlace.addEventListener("input", async function () {
 
         item.className = "city-item";
 
-        item.textContent = city.display_name;
+        const text =
+    city.name + ", " + city.address.country;
 
-        item.onclick = () => {
+item.textContent = text;
 
-            birthPlace.value = city.display_name;
-            suggestions.style.display = "none";
+item.onclick = () => {
 
-        };
+    birthPlace.value = text;
+    suggestions.style.display = "none";
+
+};
 
         suggestions.appendChild(item);
 
